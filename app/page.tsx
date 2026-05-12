@@ -1,65 +1,41 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+    <header className="fixed top-0 w-full  z-30 bg-white-500 transition-all  pt-4">
+      <nav className="max-w-dvw px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
+        <div className="col-start-1 col-end-2 flex items-center">LOGO</div>
+        <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
+          <Link href='/login' className="text-black-600 mx-2 sm:mx-4 capitalize tracking-wide hover:text-orange-500 transition-all">Login</Link>
+          <Link href='/register' className="font-medium tracking-wide py-2 px-5 sm:px-8 border border-orange-500 text-orange-500 bg-white-500 outline-none rounded-l-full rounded-r-full capitalize hover:bg-orange-500 hover:text-white transition-all hover:shadow-orange">Register</Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </nav>
+    </header>
+    <main className="max-w-dvw pt-24 px-8 xl:px-16 mx-auto min-h-dvh relative">
+      <div className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16">
+        <div className=" flex flex-col justify-center items-start row-start-2 sm:row-start-1">
+          <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">Meal Calorie</h1>
+          <h3>Count Generator</h3>
+          <p className="text-black-500 mt-4 mb-6">Provide a network for all your needs with ease and fun using LaslesVPN discover interesting features from us.</p>
+          <Link href='/register' className="py-3 lg:py-3 px-12 lg:px-16 text-white font-semibold rounded-lg border-2 border-orange-500 bg-orange-500 transition-all outline-none undefined capitalize hover:bg-white hover:text-orange-500 hover:border-2 hover:shadow-orange cursor-pointer">Register</Link>
         </div>
-      </main>
-    </div>
+        <div className="flex w-full">
+          <div className="h-full w-full relative">
+            <span className="bg-blue-400 rad absolute -top-2/6 -left-2/6 w-150 h-150 -z-10"></span>
+            <span className="box-sizing:border-box display:block overflow:hidden width:initial height:initial background:none opacity:1 border:0 margin:0 padding:0 position:relative">
+              <Image src="/meal-trackers.svg"
+                alt="Meal Calorie"
+                loading="lazy"
+                width={400}
+                height={400} />
+            </span>
+            <span className="bg-blue-400 absolute bottom-0 right-0 w-100 h-100 -z-100"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+    </>
   );
 }
